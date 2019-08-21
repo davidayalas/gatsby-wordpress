@@ -1,21 +1,29 @@
 import React from "react"
-import { Link, graphql } from "gatsby"
+//import { Link, graphql } from "gatsby"
+import {graphql} from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import PostHome from "../components/post-home"
+
 
 export default ({ data }) => {
   return (
     <Layout>
       <SEO title="home" />
-      <h1>My WordPress Blog</h1>
-      <h4>Posts</h4>
-      {data.allWordpressPost.edges.map(({ node }) => (
-        <div>
-          <Link to={node.slug}>
-            <p dangerouslySetInnerHTML={{ __html: node.title }}></p>
-          </Link>
-          <div dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+      <div class="row">
+        <div class="block-header-one-column">
+          <div class="wrap-img-bg">
+              <div class="container">
+                <div class="wrap-title ">
+                  <h1><a href="/">Gatsby - WordPress Sourcing</a></h1>
+                  <h3 class="font-alternate"></h3>
+                </div>
+              </div>
+            </div>
         </div>
+      </div>
+      {data.allWordpressPost.edges.map(({ node }) => (
+        <PostHome title={node.title} slug={node.slug} excerpt={node.excerpt} date={node.date}></PostHome>
       ))}
     </Layout>
   )
@@ -28,7 +36,8 @@ export const pageQuery = graphql`
         node {
           title
           excerpt
-          slug
+          slug,
+          date
         }
       }
     }

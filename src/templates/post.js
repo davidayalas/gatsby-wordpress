@@ -4,7 +4,6 @@ import { graphql } from "gatsby"
 
 export default ({ data }) => {
   const post = data.allWordpressPost.edges[0].node
-  console.log(post)
   return (
     <Layout>
       <div>
@@ -14,6 +13,7 @@ export default ({ data }) => {
     </Layout>
   )
 }
+
 export const query = graphql`
   query($slug: String!) {
     allWordpressPost(filter: { slug: { eq: $slug } }) {

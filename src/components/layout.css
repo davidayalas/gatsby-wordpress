@@ -1,4 +1,9 @@
-html {
+.wrap-img-bg{
+  background: url('../images/UOC_Masterbrand.jpg');
+  height: 275px;
+} 
+
+/*html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -619,4 +624,5 @@ pre tt:after {
   html {
     font-size: 100%;
   }
-}
+}*/
+
