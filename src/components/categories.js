@@ -10,11 +10,18 @@ const Categories = ({ nodes }) => {
                 <div class="ruler ruler--dynamic"></div>
                 <h4 class="h2 m-bottom-4y">Categories</h4>
                 <ul class="list--unstyled">
-                {nodes.map(({ node }) => (
-                    <li>
-                        <Link to={node.slug}>{node.name}<div class="length">({node.count})</div></Link>
-                    </li>
-                ))}
+                { 
+                
+                nodes.map(({ node }) => {
+                        if(node.count>0){
+                            return (
+                                <li>
+                                    <Link to={node.slug}>{node.name}<div class="length">({node.count})</div></Link>
+                                </li>
+                            )
+                        }
+                    }
+                )}
                 </ul>
             </div>          
         </div>
