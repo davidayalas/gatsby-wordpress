@@ -2,9 +2,9 @@ require("dotenv").config({ path: 'wordpress.env' })
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Gatsby & Wordpress as a HeadlessCMS`,
+    description: ``,
+    author: ``,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -39,6 +39,7 @@ module.exports = {
         hostingWPCOM: process.env.hostingWPCOM,
         // does your site use the Advanced Custom Fields Plugin?
         useACF: process.env.useACF,
+        excludedRoutes: ["**/settings", "**/themes", "**/users/me"],
         auth: {
           // If hostingWPCOM is true then you will need to communicate with wordpress.com API
           // in order to do that you need to create an app (of type Web) at https://developer.wordpress.com/apps/

@@ -23,6 +23,14 @@ exports.createPages = ({ graphql, actions }) => {
           }
         }
       }
+      allWordpressCategory(sort: {order: ASC, fields: name}) {
+        edges {
+          node {
+            name
+            slug
+          }
+        }
+      }
     }
   `).then(result => {
     result.data.allWordpressPost.edges.forEach(({ node }) => {
@@ -37,7 +45,23 @@ exports.createPages = ({ graphql, actions }) => {
       })
     })
 
+    result.data.allWordpressCategory.edges.forEach(({ node }) => {
+      createPage({
+        path: node.slug,
+        component: path.resolve(`./src/templates/category.js`),
+        context: {
+          // This is the $slug variable
+          // passed to page.js
+          slug: node.slug,
+          name: node.name
+        },
+      })
+    })
+
     result.data.allWordpressPage.edges.forEach(({ node }) => {
+      if(["blog feed","home"].indexOf(node.title.toLowerCase())>-1){
+        return;
+      }
       createPage({
         path: node.slug,
         component: path.resolve(`./src/templates/page.js`),

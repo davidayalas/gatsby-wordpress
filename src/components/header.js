@@ -77,11 +77,6 @@ const Header = ({ siteTitle }) => {
                                 </div>
         
                             </div>
-                            <div class="search">
-                                <form action="/cercador/index.html" method="GET" class="search-form">
-                                    <input type="text" placeholder="Cerca al blog" class="query" name="query" /><button type="submit" class="btn"><i class="icon icon--search" aria-hidden="true"></i></button>
-                                </form>
-                            </div>                    
                         </div>
                     </div>
                 </div>
@@ -104,11 +99,6 @@ const Header = ({ siteTitle }) => {
                                 }
                             )}
                             </ul>
-                            <div class="search">
-                                <form action="/cercador/index.html" method="GET" class="search-form">
-                                    <input type="text" placeholder="Cerca al blog" class="query" name="query" /><button type="submit" class="btn"><i class="icon icon--search" aria-hidden="true"></i></button>
-                                </form>
-                            </div>
                         </nav>            
                     </div>
                 </div>
