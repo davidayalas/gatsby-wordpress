@@ -10,7 +10,7 @@ const PostHome = ({ title, slug, excerpt, date }) => {
     return (
         <div class="m-bottom-6y">
             <div class="block-post-without-img">
-                <Link to={slug}>
+                <Link to={`/post/${slug}`}>
                     <h2 class="font-alternate"><span class="highlighted" dangerouslySetInnerHTML={{ __html: title }}></span></h2>
                 </Link>
                 <div class="color-grey-dark">

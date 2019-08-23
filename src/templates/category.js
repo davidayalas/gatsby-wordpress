@@ -32,6 +32,7 @@ export const query = graphql`
                     title
                     content
                     slug
+                    excerpt
                     date
                 }
             }
