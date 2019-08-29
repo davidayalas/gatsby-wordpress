@@ -27,13 +27,16 @@ const IndexPage = ({ data, pageContext }) => {
             {group.map(({ node }) => (
               <PostHome title={node.title} slug={node.slug} excerpt={node.excerpt} date={node.date}></PostHome>
             ))}
-            <div className="previousLink pull-left">
-                <NavLink test={first} url={"/" + previousUrl} text="Go to Previous Page" />
+            <div class="pagination-container">
+                <ul class="pagination">
+                    <li className="previousLink pull-left">
+                        <NavLink test={first} url={"/" + previousUrl} text="Go to Previous Page" />
+                    </li>
+                    <li className="nextLink pull-right">
+                        <NavLink test={last} url={"/" + nextUrl} text="Go to Next Page" />
+                    </li>
+                </ul>
             </div>
-            <div className="nextLink pull-right">
-                <NavLink test={last} url={"/" + nextUrl} text="Go to Next Page" />
-            </div>
-
         </div>
         <aside class="col-md-4 section__secondary">
             <Categories nodes={additionalContext.categories} />
