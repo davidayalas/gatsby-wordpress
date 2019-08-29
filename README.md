@@ -5,3 +5,7 @@ Me too. But when you arrive with a solution based on a Static Site Generator (Hu
 Then, an alternative is to use WP as a HeadlessCMS and use a SSG to render frontend (Gatsby has a great plugin to get content from WP REST API).
 
 This is a proof of concept to try post, pages, categories and pagination.
+
+## Live site
+
+### [https://gatsby-wp.netlify.com](https://gatsby-wp.netlify.com)
